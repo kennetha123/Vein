@@ -1,3 +1,8 @@
+#ifndef _WIN64
+#pragma comment(linker, "/include:_wWinMain@16")
+#else
+#pragma comment(linker, "/include:wWinMain")
+#endif
 #include "veinpch.h"
 
 class Game : public Vein::Application
@@ -5,7 +10,7 @@ class Game : public Vein::Application
 public:
 	Game()
 	{
-		std::cout << "Game" << std::endl;
+		
 	}
 
 	~Game()
